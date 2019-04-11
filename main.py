@@ -4,6 +4,8 @@ import brotli
 from urllib.parse import unquote
 
 
+# rename functions to be better suited
+
 def probe_sources(url):
     headers = {
         'authority': 'www16.kickassanime.io',
@@ -142,12 +144,22 @@ def collect_sources(url):
     prepared_src = prepare_sources(unprepared_src)
 
     direct_src = final_sources(prepared_src)
-
+    
     return direct_src
+
+def download_video(source_array, preference):
+    # download the file, if it fails try a different source
+    for source in source_array:
+        if preference in source:
+            # attempt to download with preference
+            pass
+    pass
+    
 
 video_url = 'https://www16.kickassanime.io/anime/one-punch-man-982833/episode-01-709741'
 
 sources = collect_sources(video_url)
-
+# preference = "yourupload"
+# download_video(sources, preference)
 
 print(sources)
