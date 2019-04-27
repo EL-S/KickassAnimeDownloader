@@ -53,6 +53,7 @@ def prepare_sources(video_src):
         if "vidstreaming.io" in src:
             src = src.replace("streaming.php","download")
             src = src.replace("load.php", "download")
+            src = src.replace("https:", "")
             src = "https:" + src
         elif "estream.to" in src:
             pass
@@ -67,6 +68,12 @@ def prepare_sources(video_src):
         elif "yourupload.com" in src:
             src = src.replace("embed","watch")
         elif "streamango.com" in src:
+            pass
+        elif "xstreamcdn.com" in src:
+            pass
+        elif "rapidvideo.com" in src:
+            pass
+        elif "vev.io" in src:
             pass
         else:
             print("Unknown:",src)
@@ -129,6 +136,12 @@ def final_sources(video_src2):
             download_src["yourupload.com"] = src
             
         elif "streamango.com" in src:
+            pass
+        elif "xstreamcdn.com" in src:
+            pass
+        elif "rapidvideo.com" in src:
+            pass
+        elif "vev.io" in src:
             pass
         else:
             c += 1
